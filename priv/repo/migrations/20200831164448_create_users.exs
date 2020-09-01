@@ -5,7 +5,7 @@ defmodule Rumbl.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :name, :string
       add :username, :string, null: false
-      add :password_has, :string
+      add :password_hash, :string
 
       timestamps()
     end
