@@ -83,7 +83,7 @@ header nav ul {
   margin: 1rem;
   margin-top: 0;
 }
-header nav a {
+header nav > a {
   display: block;
 }
 
