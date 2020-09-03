@@ -121,7 +121,7 @@ defmodule Rumbl.Multimedia do
   end
 
   defp user_videos_query(query, %User{id: user_id}) do
-    from(v in query, where: v.user_id == ^user_id)
+    from v in query, where: v.user_id == ^user_id
   end
 
   def create_category!(name) do
