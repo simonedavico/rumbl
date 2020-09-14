@@ -1,6 +1,5 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Rumbl.io" %></h1>
-  <p>Rumbl out loud.</p>
+  <h1><%= gettext "Welcome to %{name}!", name: "rumbl" %></h1>
 </section>
 
 <section class="row">
@@ -19,19 +18,19 @@
     </ul>
   </article>
   <article class="column">
-    <h2>Help</h2>
+    <h2>LiveView</h2>
     <ul>
       <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+        <a href="/welcome">Welcome Demo</a>
       </li>
       <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+        <a href="/clock">Clock demo</a>
       </li>
       <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+        <a href="counter">Counter demo</a>
       </li>
       <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+        <a href="/search">Search demo</a>
       </li>
     </ul>
   </article>

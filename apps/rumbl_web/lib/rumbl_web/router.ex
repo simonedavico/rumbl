@@ -4,7 +4,8 @@ defmodule RumblWeb.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_flash
+    plug :fetch_live_flash
+    plug :put_root_layout, {RumblWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug RumblWeb.Auth
@@ -26,6 +27,11 @@ defmodule RumblWeb.Router do
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     get "/watch/:id", WatchController, :show
+
+    live "/welcome", WelcomeLive
+    live "/clock", ClockLive
+    live "/counter", CounterLive
+    live "/search", SearchLive
 
     get "/", PageController, :index
   end
