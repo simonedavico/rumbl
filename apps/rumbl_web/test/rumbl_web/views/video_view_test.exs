@@ -2,10 +2,12 @@ defmodule RumblWeb.VideoViewTest do
   use RumblWeb.ConnCase, async: true
   import Phoenix.View
 
+  alias Rumbl.Multimedia.{Video, Category}
+
   test "renders index.html", %{conn: conn} do
     videos = [
-      %Rumbl.Multimedia.Video{id: 1, title: "a", category: %Rumbl.Multimedia.Category{id: 1, name: "test"}},
-      %Rumbl.Multimedia.Video{id: 2, title: "b", category: %Rumbl.Multimedia.Category{id: 1, name: "test"}}
+      %Video{id: 1, title: "a", category: %Category{id: 1, name: "test"}},
+      %Video{id: 2, title: "b", category: %Category{id: 1, name: "test"}}
     ]
 
     content = render_to_string(
@@ -23,8 +25,8 @@ defmodule RumblWeb.VideoViewTest do
   end
 
   test "renders new.html", %{conn: conn} do
-    changeset = Rumbl.Multimedia.change_video(%Rumbl.Multimedia.Video{})
-    categories = [%Rumbl.Multimedia.Category{id: 1, name: "test"}]
+    changeset = Rumbl.Multimedia.change_video(%Video{})
+    categories = [%Category{id: 1, name: "test"}]
 
     content = render_to_string(
       RumblWeb.VideoView,
